@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using MVC5training_2.Models;
 
 namespace MVC5training_2
 {
@@ -12,6 +14,8 @@ namespace MVC5training_2
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new BookDbInitializer());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

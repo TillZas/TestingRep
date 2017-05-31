@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC5training_2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,22 +9,37 @@ namespace MVC5training_2.Controllers
 {
     public class HomeController : Controller
     {
+
+        BookContext db = new BookContext();
+
         public ActionResult Index()
         {
+            IEnumerable<Book> books = db.Books;
+            ViewBag.Books = books;
             return View();
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult Buy(int id)
         {
-            ViewBag.Message = "Your application description page.";
-
+            if (id == null) return null;
+            ViewBag.BookId = id;
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public RedirectToRouteResult Buy(Purchase purchase)
         {
-            ViewBag.Message = "Your contact page.";
+            purchase.Date = DateTime.Now;
+            db.Purchases.Add(purchase);
+            db.SaveChanges();
+            return RedirectToAction("AfterBuy", "Home", new { name = purchase.Name});
+            // + purchase.Name + ", благодарим за покупку книги "+ purchase.BookID.ToString();
+        }
 
+        public ActionResult AfterBuy(string name)
+        {
+            ViewBag.Name = name;
             return View();
         }
     }

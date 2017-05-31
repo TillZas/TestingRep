@@ -18,7 +18,7 @@ namespace MVC5training_2.Models
         public string Author { get; set; }
 
         // Book price
-        public float Price { get; set; }
+        public double Price { get; set; }
 
 
 
