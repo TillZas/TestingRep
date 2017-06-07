@@ -16,7 +16,7 @@ namespace MVC5training_2.Controllers
         {
             IEnumerable<Book> books = db.Books;
             ViewBag.Books = books;
-            return View();
+            return View(books);
         }
 
         [HttpGet]
@@ -33,14 +33,22 @@ namespace MVC5training_2.Controllers
             purchase.Date = DateTime.Now;
             db.Purchases.Add(purchase);
             db.SaveChanges();
-            return RedirectToAction("AfterBuy", "Home", new { name = purchase.Name});
+            return RedirectToAction("AfterBuy", "Home", new { name = purchase.Name,address = purchase.Address});
             // + purchase.Name + ", благодарим за покупку книги "+ purchase.BookID.ToString();
         }
 
-        public ActionResult AfterBuy(string name)
+        public ActionResult AfterBuy(string name,string address)
         {
             ViewBag.Name = name;
+            //ViewBag.Address = address;
+            ViewBag.Message = "Товар прийдет к вам на " + address + " примерно никогда.";
             return View();
+        }
+
+        public ActionResult PartialTest()
+        {
+            ViewBag.Message = "Частичное представление";
+            return PartialView();
         }
     }
 }

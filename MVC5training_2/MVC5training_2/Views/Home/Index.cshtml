@@ -1,10 +1,27 @@
-﻿@{
+﻿@using MVC5training_2.Models
+@model IEnumerable<Book>
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@helper BookList(IEnumerable<MVC5training_2.Models.Book> books)
+{
+    <ul>
+        @foreach (MVC5training_2.Models.Book b in books)
+        {
+            <li>
+                <td><p>Название: @b.Name</p></td>
+                <td><p>Автор:    @b.Author</p></td>
+                <td><p>Цена:     @b.Price р.</p></td>
+                <td><p><a href="/Home/Buy/@b.Id">Оформить покупку.</a></p></td>
+            </li>
+        }
+    </ul>
 }
 
     <div>
         <h3>Распродажа книг</h3>
-
+        <!--
         <table>
             <tr>
                 <td><p>Название книги</p></td>
@@ -12,7 +29,7 @@
                 <td><p>Цена</p></td>
                 <td></td>
             </tr>
-            @foreach (var b in ViewBag.Books)
+            @foreach (Book b in Model)
             {
                 <tr>
                     <td><p>@b.Name</p></td>
@@ -21,5 +38,9 @@
                     <td><p><a href="/Home/Buy/@b.Id">Купить</a></p></td>
                 </tr>
             }
-        </table>
+        </table>-->
+        @BookList(Model)
     </div>
+@section Footer {
+    TillZasChanged
+}

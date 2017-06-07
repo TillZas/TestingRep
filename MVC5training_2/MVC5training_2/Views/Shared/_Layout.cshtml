@@ -13,5 +13,15 @@
         </ul>
     </nav>
     @RenderBody()
+    <footer>
+    @if (IsSectionDefined("Footer"))
+        {
+            @RenderSection("Footer")
+        }
+        else
+        {
+            <span>TillZas</span>
+        }
+    </footer>
 </body>
 </html>

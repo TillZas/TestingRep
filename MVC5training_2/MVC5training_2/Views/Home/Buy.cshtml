@@ -1,23 +1,19 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-    <div>
+﻿@model MVC5training_2.Models.Purchase 
+   <div>
         <h3>Форма оформления покупки</h3>
-        <form method="post" action="">
-            <input type="hidden" value="@ViewBag.BookId" name="BookId" />
-            <table>
-                <tr>
-                    <td><p>Введите свое имя </p></td>
-                    <td><input type="text" name="Name" /> </td>
-                </tr>
-                <tr>
-                    <td><p>Введите адрес :</p></td>
-                    <td>
-                        <input type="text" name="Address" />
-                    </td>
-                </tr>
-                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
-            </table>
-        </form>
+       @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+       {
+            @Html.HiddenFor(m => m.BookID)
+            @Html.LabelFor(m => m.Name, "Введите свое имя")
+            <br />
+            @Html.TextBoxFor(m => m.Name)
+            <br /><br />
+            @Html.LabelFor(m => m.Address, "Введите адрес")
+            <br />
+            @Html.TextBoxFor(m => m.Address)
+            <p><input type="submit" value="Отправить" /></p>
+       }
     </div>
+@section Footer {
+    TillZasChanged 2
+}
