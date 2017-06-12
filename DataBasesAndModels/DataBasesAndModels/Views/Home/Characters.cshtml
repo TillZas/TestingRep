@@ -1,0 +1,47 @@
+﻿@using DataBasesAndModels.Models
+@model CharacterViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Местные Жители</h3>
+    <table>
+        <tr>
+            <td><p></p></td>
+            <td><p>Имя Фамилия</p></td>
+            <td><p>Возраст</p></td>
+            <td><p>Адрес</p></td>
+        </tr>
+        @foreach (DataBasesAndModels.Models.Character ch in Model.Characters)
+            {
+            <tr>
+                <td>@Html.DisplayFor(model => ch.Id)</td>
+                <td>@Html.DisplayFor(model => ch.Name) @Html.DisplayFor(model => ch.Surname)</td>
+                <td>@Html.DisplayFor(model => ch.Age)</td>
+                <td>
+                @if (ch.Street != null && ch.HouseId > 0)
+                {
+                    <p>@Html.DisplayFor(model => ch.Street.Name) @Html.DisplayFor(model => ch.HouseId)</p>
+                }
+                else
+                {
+                    if (ch.Street != null)
+                    {
+                        <p> @Html.DisplayFor(model => ch.Street.Name)</p>
+                    }else{
+                                <p>Бездомный.</p>
+                        }
+
+                }
+                </td>
+                <td><p><a href="/Home/About/@ch.Id">Подробнее</a> | 
+                    <a href="/Home/EditCharacter/@ch.Id">Редактировать</a> | <a href="/Home/DeleteCharacter/@ch.Id">Удалить</a></p></td>
+            </tr>
+        }
+    </table>
+    <div class="btn-group">
+        @Html.PageLinks(Model.PageInfo, x => Url.Action("Characters", new { page = x }))
+    </div>
+</div>
+
+<a href="/Home/CreateCharacter">Создать жителя</a>

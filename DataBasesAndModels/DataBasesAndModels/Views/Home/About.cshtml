@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>О персонаже № @ViewBag.Id</h2>
+
+<table>
+    <tr>
+        <td><p>Имя</p></td>
+        <td><p>@ViewBag.Name</p></td>
+    </tr>
+    <tr>
+        <td><p>Фамилия</p></td>
+        <td><p>@ViewBag.Surname</p></td>
+    </tr>
+    <tr>
+        <td><p>Возраст</p></td>
+        <td><p>@ViewBag.Age</p></td>
+    </tr>
+    <tr>
+        <td><p>Пол</p></td>
+        <td><p>@ViewBag.Gender</p></td>
+    </tr>
+    <tr>
+        <td><p>Адреc</p></td>
+        <td><p>@ViewBag.HouseName</p></td>
+    </tr>
+    <tr>
+        <td><p>Отец</p></td>
+        <td><p>@ViewBag.FatherName</p></td>
+    </tr>
+    <tr>
+        <td><p>Мать</p></td>
+        <td><p>@ViewBag.MotherName</p></td>
+    </tr>
+    <tr>
+        <td><p>Пара</p></td>
+        <td><p>@ViewBag.CoupleName</p></td>
+    </tr>
+</table>
+
+
+

@@ -1,0 +1,62 @@
+﻿
+@model DataBasesAndModels.Models.Character
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Создание персонажа</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name, "Имя")
+    <br />
+    @Html.EditorFor(model => model.Name)
+    <br /><br />
+
+    @Html.LabelFor(model => model.Surname, "Фамилия")
+    <br />
+    @Html.EditorFor(model => model.Surname)
+    <br /><br />
+
+    @Html.LabelFor(model => model.Age, "Возраст")
+    <br />
+    @Html.EditorFor(model => model.Age)
+    <br /><br />
+
+    @Html.LabelFor(model => model.Gender, "Пол(1=М,2=Ж)")
+    <br />
+    @Html.EditorFor(model => model.Gender)
+    <br /><br />
+
+    @Html.LabelFor(model => model.FatherId, "ID отца(необязательно)")
+    <br />
+    @Html.EditorFor(model => model.FatherId)
+    <br /><br />
+
+    @Html.LabelFor(model => model.MotherId, "ID матери(необязательно)")
+    <br />
+    @Html.EditorFor(model => model.MotherId)
+    <br /><br />
+
+    @Html.LabelFor(model => model.CoupleId, "ID партнера(необязательно)")
+    <br />
+    @Html.EditorFor(model => model.CoupleId)
+    <br /><br />
+
+    @Html.LabelFor(model => model.StreetId, "Улица")
+    <br />
+    @Html.DropDownListFor(Model => Model.StreetId,ViewBag.Streets as SelectList)
+    <br /><br />
+
+    @Html.LabelFor(model => model.HouseId, "Номер дома(необязательно)")
+    <br />
+    @Html.EditorFor(model => model.HouseId)
+    <br /><br />
+
+
+
+
+    <input type="submit" value="Создать" />
+}
+

@@ -1,0 +1,20 @@
+﻿
+@model DataBasesAndModels.Models.Street
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Создание улицы</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name, "Название")
+    <br />
+    @Html.EditorFor(model => model.Name)
+    <br /><br />
+
+
+    <input type="submit" value="Создать" />
+}
+

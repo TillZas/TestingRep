@@ -1,0 +1,66 @@
+﻿
+@model DataBasesAndModels.Models.Character
+@{
+    ViewBag.Title = "EditCharacter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Житель № @Model.Id</h2>
+@using (Html.BeginForm("EditCharacter", "Home", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.Name, "Имя")
+            <br />
+            @Html.EditorFor(m => m.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Surname, "Фамилия")
+            <br />
+            @Html.EditorFor(m => m.Surname)
+        </p>
+
+        <p>
+            @Html.LabelFor(m => m.Age, "Возраст")
+            <br />
+            @Html.EditorFor(m => m.Age)
+        </p>
+
+        <p>
+            @Html.LabelFor(m => m.Gender, "Пол (1=М/2=Ж)")
+            <br />
+            @Html.EditorFor(m => m.Gender)
+        </p>
+
+        <p>
+            @Html.LabelFor(m => m.FatherId, "ID отца")
+            <br />
+            @Html.EditorFor(m => m.FatherId)
+        </p>
+
+        <p>
+            @Html.LabelFor(m => m.MotherId, "ID матери")
+            <br />
+            @Html.EditorFor(m => m.MotherId)
+        </p>
+
+        <p>
+            @Html.LabelFor(m => m.CoupleId, "ID партнёра")
+            <br />
+            @Html.EditorFor(m => m.CoupleId)
+        </p>
+
+        <p>
+            @Html.LabelFor(m => m.HouseId, "Номер дома")
+            <br />
+            @Html.EditorFor(m => m.HouseId)
+        </p>
+
+        <p>
+            @Html.LabelFor(m => m.StreetId, "Улица")
+            <br />
+            @Html.DropDownListFor(Model => Model.StreetId, ViewBag.Streets as SelectList)
+        </p>
+        <p><input type="submit" value="Отправить" /></p>
+    </fieldset>
+}

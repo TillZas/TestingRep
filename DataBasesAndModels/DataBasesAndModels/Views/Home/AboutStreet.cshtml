@@ -1,0 +1,27 @@
+﻿@using DataBasesAndModels.Models
+@model Street
+@{
+    ViewBag.Title = "AboutStreet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Информация о улице @Model.Id</h2>
+
+<dt>Название</dt>
+<dd>
+    @Html.DisplayFor(model => model.Name)
+</dd>
+
+<dt>Жители</dt>
+
+<dd>
+    <ul>
+        @foreach (Character ch in Model.Characters)
+        {
+            <li>@ch.Name @ch.Surname @if(ch.HouseId>0){<p>д. @ch.HouseId</p>} </li>
+        }
+    </ul>
+</dd>
+
+
+

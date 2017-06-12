@@ -1,0 +1,29 @@
+﻿@using DataBasesAndModels.Models
+@model StreetViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Улицы</h3>
+    <table>
+        <tr>
+            <td><p></p></td>
+            <td><p>Название</p></td>
+        </tr>
+        @foreach (Street ch in Model.Streets)
+        {
+            <tr>
+                <td><p>@ch.Id</p></td>
+                <td><p>@ch.Name</p></td>
+                <td>@Html.ActionLink("Подробности", "AboutStreet", new { id = ch.Id })</td>
+            </tr>
+        }
+    </table>
+
+    <div class="btn-group">
+        @Html.PageLinks(Model.PageInfo, x => Url.Action("Streets", new { page = x }))
+    </div>
+
+
+</div>
+@Html.ActionLink("Создать улицу", "CreateStreet")
