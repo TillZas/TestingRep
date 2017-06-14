@@ -35,7 +35,7 @@
                 }
                 </td>
                 <td><p><a href="/Home/About/@ch.Id">Подробнее</a> | 
-                    <a href="/Home/EditCharacter/@ch.Id">Редактировать</a> | <a href="/Home/DeleteCharacter/@ch.Id">Удалить</a></p></td>
+                    <a href="/Home/EditCharacter/@ch.Id">Редактировать</a> | <a href="@Url.Action("DeleteCharacter","Home",new { id = ch.Id})">Удалить</a></p></td>
             </tr>
         }
     </table>
