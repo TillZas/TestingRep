@@ -152,6 +152,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PagingHelper.cs" />
+    <Compile Include="Migrations\201706211350569_Initial.cs" />
+    <Compile Include="Migrations\201706211350569_Initial.Designer.cs">
+      <DependentUpon>201706211350569_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706211352446_TownMigration.cs" />
+    <Compile Include="Migrations\201706211352446_TownMigration.Designer.cs">
+      <DependentUpon>201706211352446_TownMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\PagingModels.cs" />
@@ -207,7 +215,6 @@
     <Content Include="Views\Home\AboutStreet.cshtml" />
     <Content Include="Views\Home\CreateStreet.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
@@ -222,6 +229,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706211350569_Initial.resx">
+      <DependentUpon>201706211350569_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706211352446_TownMigration.resx">
+      <DependentUpon>201706211352446_TownMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

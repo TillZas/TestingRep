@@ -76,3 +76,6 @@ D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\bin\ru\System.Web.WebPa
 D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.csprojResolveAssemblyReference.cache
 D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.dll
 D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.pdb
+D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.Migrations.Initial.resources
+D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.csproj.GenerateResource.Cache
+D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.Migrations.TownMigration.resources

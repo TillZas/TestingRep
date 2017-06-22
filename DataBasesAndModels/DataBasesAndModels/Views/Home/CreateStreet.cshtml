@@ -14,6 +14,11 @@
     @Html.EditorFor(model => model.Name)
     <br /><br />
 
+    @Html.LabelFor(model => model.CreationAge, "Год создания")
+    <br />
+    @Html.EditorFor(model => model.CreationAge)
+    <br /><br />
+
 
     <input type="submit" value="Создать" />
 }

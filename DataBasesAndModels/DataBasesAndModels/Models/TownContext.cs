@@ -8,6 +8,8 @@ namespace DataBasesAndModels.Models
 {
     public class TownContext :DbContext
     {
+
+
         public DbSet<Character> Characters { get; set; }
         public DbSet<Street> Streets { get; set; }
     }

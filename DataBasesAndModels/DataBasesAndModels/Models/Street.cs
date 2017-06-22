@@ -11,6 +11,8 @@ namespace DataBasesAndModels.Models
 
         public string Name { get; set; }
 
+        public int CreationAge { get; set; }
+
         public ICollection<Character> Characters { get; set; }
 
         public Street()

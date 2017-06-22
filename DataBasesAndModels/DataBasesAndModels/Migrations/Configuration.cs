@@ -10,6 +10,7 @@ namespace DataBasesAndModels.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "DataBaseAndModels.Migrations.Configuration";
         }
 
         protected override void Seed(DataBasesAndModels.Models.TownContext context)
