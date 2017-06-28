@@ -1,0 +1,43 @@
+﻿@model DataBasesAndModels.Models.Character
+@{
+    ViewBag.Title = "DeleteCharacter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удалить персонажа @Model.Id</h2>
+<dl>
+    <dt>Имя</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+
+    <dt>Фамилия</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Surname)
+    </dd>
+
+    <dt>Возраст</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Age)
+    </dd>
+
+    <dt>Пол</dt>
+    
+        @if (Model.Gender == 1)
+        {
+            <dd>
+                М
+            </dd>
+        }
+        else
+        {
+            <dd>
+                Ж
+            </dd>
+        }
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}
