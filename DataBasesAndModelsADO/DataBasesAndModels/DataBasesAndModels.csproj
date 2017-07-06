@@ -147,12 +147,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Museum\Controllers\ArtifactController.cs" />
+    <Compile Include="Areas\Museum\MuseumAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PagingHelper.cs" />
     <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\CharacterView.cs" />
     <Compile Include="Models\PagingModels.cs" />
     <Compile Include="Models\Street.cs" />
     <Compile Include="Models\TownContext.cs" />
@@ -174,6 +177,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Museum\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -222,6 +226,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Museum\Models\" />
+    <Folder Include="Areas\Museum\Views\Artifact\" />
+    <Folder Include="Areas\Museum\Views\Shared\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
   <PropertyGroup>

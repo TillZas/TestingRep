@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace DataBasesAndModels.Models
 {
     public class Character
     {
+        [HiddenInput (DisplayValue = false)]
         public int Id { get; set; }
 
         public string Name { get; set; }

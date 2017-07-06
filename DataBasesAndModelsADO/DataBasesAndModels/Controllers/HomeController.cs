@@ -75,16 +75,17 @@ namespace DataBasesAndModels.Controllers
             Character father = ch.FatherId > 0 ? database.getCharacter(ch.FatherId) : null;
             Character mother = ch.MotherId > 0 ? database.getCharacter(ch.MotherId) : null;
             Character couple = ch.CoupleId > 0 ? database.getCharacter(ch.CoupleId) : null;
-            ViewBag.Id = id;
-            ViewBag.Name = ch.Name;
-            ViewBag.Surname = ch.Surname;
-            ViewBag.Age = ch.Age;
-            ViewBag.Gender = ch.Gender == 1 ? "М" : "Ж";
-            ViewBag.FatherName = father!=null ? father.Name + " " + father.Surname : "Без отца";
-            ViewBag.MotherName = mother!=null ? mother.Name + " " + mother.Surname : "Без матери";
-            ViewBag.CoupleName = couple!=null ? couple.Name + " " + couple.Surname : "Без пары";
-            ViewBag.HouseName = ch.HouseId>0 && ch.Street != null ? ch.Street!=null? "ул." + ch.Street.Name + " д." + ch.HouseId : "Дом номер "+ ch.HouseId : "Бездомный";
-            return View();
+            CharacterView cv = new CharacterView();
+            ViewBag.Id = cv.Id = id;
+            ViewBag.Name = cv.Name = ch.Name;
+            ViewBag.Surname = cv.Surname = ch.Surname;
+            ViewBag.Age = cv.Age = ch.Age;
+            ViewBag.Gender = cv.Gender = ch.Gender == 1 ? "М" : "Ж";
+            ViewBag.FatherName = cv.FatherName = father!=null ? father.Name + " " + father.Surname : "Без отца";
+            ViewBag.MotherName = cv.MotherName = mother!=null ? mother.Name + " " + mother.Surname : "Без матери";
+            ViewBag.CoupleName = cv.CoupleName = couple!=null ? couple.Name + " " + couple.Surname : "Без пары";
+            ViewBag.HouseName = cv.HouseName = ch.HouseId>0 && ch.Street != null ? ch.Street!=null? "ул." + ch.Street.Name + " д." + ch.HouseId : "Дом номер "+ ch.HouseId : "Бездомный";
+            return View(cv);
         }
 
         [HttpGet]

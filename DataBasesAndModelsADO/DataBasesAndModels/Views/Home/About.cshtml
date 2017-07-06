@@ -1,11 +1,16 @@
-﻿
+﻿@using DataBasesAndModels.Models;
+@model CharacterView
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "О персонаже" + @ViewBag.Id;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>О персонаже № @ViewBag.Id</h2>
 
+@Html.DisplayForModel()
+
+<!--
+    
 <table>
     <tr>
         <td><p>Имя</p></td>
@@ -41,5 +46,5 @@
     </tr>
 </table>
 
-
+-->
 
