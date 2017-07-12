@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using DataBasesAndModels.Controllers;
 
 namespace DataBasesAndModels
 {
@@ -12,6 +13,8 @@ namespace DataBasesAndModels
     {
         protected void Application_Start()
         {
+            ValueProviderFactories.Factories.Add(new SomeValueProviderFactory());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

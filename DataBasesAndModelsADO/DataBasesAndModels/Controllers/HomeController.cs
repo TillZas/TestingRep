@@ -173,11 +173,29 @@ namespace DataBasesAndModels.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateStreet(Street str)
+        public ActionResult CreateStreet(Street strIn)
         {
-            database.addStreet(str);
+            Street str = new Street();
+            if (TryUpdateModel(str))
+            {
+                database.addStreet(str);
+                return RedirectToAction("Streets");
+            }
+            else
+            {
+                return Content("Not valid field!!!");
+            }
 
-            return RedirectToAction("Streets");
+        }
+
+        public string GetValues(string someValues)
+        {
+            return someValues;
+        }
+
+        public string GetValue(string someValue)
+        {
+            return someValue;
         }
     }
 }
