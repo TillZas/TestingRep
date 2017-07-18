@@ -26,22 +26,22 @@
 
     @Html.LabelFor(model => model.Gender, "Пол(1=М,2=Ж)")
     <br />
-    @Html.EditorFor(model => model.Gender)
+    @Html.DropDownListFor(Model => Model.Gender, ViewBag.GenderOptions as SelectList)
     <br /><br />
 
-    @Html.LabelFor(model => model.FatherId, "ID отца(необязательно)")
+    @Html.LabelFor(model => model.FatherId, "Отец")
     <br />
-    @Html.EditorFor(model => model.FatherId)
+    @Html.DropDownListFor(Model => Model.MotherId, ViewBag.Fathers as SelectList)
     <br /><br />
 
-    @Html.LabelFor(model => model.MotherId, "ID матери(необязательно)")
+    @Html.LabelFor(model => model.MotherId, "Мать")
     <br />
-    @Html.EditorFor(model => model.MotherId)
+    @Html.DropDownListFor(Model => Model.MotherId, ViewBag.Mothers as SelectList)
     <br /><br />
 
-    @Html.LabelFor(model => model.CoupleId, "ID партнера(необязательно)")
+    @Html.LabelFor(model => model.CoupleId, "Партнер")
     <br />
-    @Html.EditorFor(model => model.CoupleId)
+    @Html.DropDownListFor(Model => Model.CoupleId, ViewBag.Couples as SelectList)
     <br /><br />
 
     @Html.LabelFor(model => model.StreetId, "Улица")
