@@ -41,7 +41,9 @@
     </table>
     <div class="btn-group">
         @Html.PageLinks(Model.PageInfo, x => Url.Action("Characters", new { page = x }))
+
     </div>
 </div>
 
-<a href="/Home/CreateCharacter">Создать жителя</a>
+<a href="/Home/CreateCharacter"> Создать жителя </a>
+<a href="/Characters/Create"> Создать жителя Automatic JS </a>

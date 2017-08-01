@@ -154,16 +154,62 @@ namespace DataBasesAndModels.Controllers
             coupleList.Insert(0, new SelectListItem() { Text = "Нет пары", Value = "-10" });
             ViewBag.Couples = new SelectList(coupleList, "Value", "Text");
 
+            ViewBag.Message = "";
             return View();
         }
 
         [HttpPost]
         public ActionResult CreateCharacter(Character ch)
         {
-            database.Entry(ch).State = EntityState.Added;
-            database.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                database.Entry(ch).State = EntityState.Added;
+                database.SaveChanges();
 
-            return RedirectToAction("Characters");
+                return RedirectToAction("Characters");
+            }
+            ViewBag.Message = "Ошибка валидации!!!";
+            SelectList streets = new SelectList(database.Streets, "Id", "Name");
+            ViewBag.Streets = streets;
+
+
+            List<SelectListItem> genders = new List<SelectListItem>();
+            genders.Add(new SelectListItem() { Text = "Мужчина", Value = "1" });
+            genders.Add(new SelectListItem() { Text = "Женщина", Value = "2" });
+
+            ViewBag.GenderOptions = new SelectList(genders, "Value", "Text");
+
+            List<SelectListItem> mothersList;
+
+            mothersList = database.Characters
+            .Where(item => item.Gender == 2)
+            .Select(c => new SelectListItem()
+            {
+                Text = (c.Name + " " + c.Surname),
+                Value = c.Id.ToString()
+            }).ToList();
+            mothersList.Insert(0, new SelectListItem() { Text = "Без матери", Value = "-10" });
+            ViewBag.Mothers = new SelectList(mothersList, "Value", "Text"); ;
+
+            List<SelectListItem> fathersList = database.Characters
+                .Where(item => item.Gender == 1)
+                .Select(c => new SelectListItem()
+                {
+                    Text = (c.Name + " " + c.Surname),
+                    Value = c.Id.ToString()
+                }).ToList();
+            fathersList.Insert(0, new SelectListItem() { Text = "Без отца", Value = "-10" });
+            ViewBag.Fathers = new SelectList(fathersList, "Value", "Text");
+
+            List<SelectListItem> coupleList = database.Characters
+                .Select(c => new SelectListItem()
+                {
+                    Text = (c.Name + " " + c.Surname),
+                    Value = c.Id.ToString()
+                }).ToList();
+            coupleList.Insert(0, new SelectListItem() { Text = "Нет пары", Value = "-10" });
+            ViewBag.Couples = new SelectList(coupleList, "Value", "Text");
+            return View(ch);
         }
 
         public ActionResult DeleteCharacter(int id)
@@ -216,6 +262,8 @@ namespace DataBasesAndModels.Controllers
         [HttpPost]
         public ActionResult CreateStreet(Street str)
         {
+            if (!ModelState.IsValid) return RedirectToAction("CreateStreet");
+
             database.Entry(str).State = EntityState.Added;
             database.SaveChanges();
 

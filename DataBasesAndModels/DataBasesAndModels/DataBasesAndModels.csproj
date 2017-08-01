@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CharactersController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -161,6 +162,18 @@
     <Compile Include="Migrations\201706211352446_TownMigration.cs" />
     <Compile Include="Migrations\201706211352446_TownMigration.Designer.cs">
       <DependentUpon>201706211352446_TownMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707310926147_MinorMigration.cs" />
+    <Compile Include="Migrations\201707310926147_MinorMigration.Designer.cs">
+      <DependentUpon>201707310926147_MinorMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707310955544_MinorMigration2.cs" />
+    <Compile Include="Migrations\201707310955544_MinorMigration2.Designer.cs">
+      <DependentUpon>201707310955544_MinorMigration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708011144175_MinorMigration3.cs" />
+    <Compile Include="Migrations\201708011144175_MinorMigration3.Designer.cs">
+      <DependentUpon>201708011144175_MinorMigration3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Character.cs" />
@@ -204,6 +217,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\StreetValidate.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -227,6 +241,11 @@
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Chat\ChatRoom.cshtml" />
     <Content Include="Views\Chat\History.cshtml" />
+    <Content Include="Views\Characters\Create.cshtml" />
+    <Content Include="Views\Characters\Delete.cshtml" />
+    <Content Include="Views\Characters\Details.cshtml" />
+    <Content Include="Views\Characters\Edit.cshtml" />
+    <Content Include="Views\Characters\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -246,6 +265,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706211352446_TownMigration.resx">
       <DependentUpon>201706211352446_TownMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707310926147_MinorMigration.resx">
+      <DependentUpon>201707310926147_MinorMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707310955544_MinorMigration2.resx">
+      <DependentUpon>201707310955544_MinorMigration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708011144175_MinorMigration3.resx">
+      <DependentUpon>201708011144175_MinorMigration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

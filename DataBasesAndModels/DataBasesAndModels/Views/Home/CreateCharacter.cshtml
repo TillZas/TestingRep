@@ -7,56 +7,61 @@
 
 <h2>Создание персонажа</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(model => model.Name, "Имя")
-    <br />
-    @Html.EditorFor(model => model.Name)
-    <br /><br />
+<h>
+    @ViewBag.Message
+</h>
 
-    @Html.LabelFor(model => model.Surname, "Фамилия")
-    <br />
-    @Html.EditorFor(model => model.Surname)
-    <br /><br />
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(model => model.Name)
+            <br />
+            @Html.EditorFor(model => model.Name)
+            <br /><br />
 
-    @Html.LabelFor(model => model.Age, "Возраст")
-    <br />
-    @Html.EditorFor(model => model.Age)
-    <br /><br />
+            @Html.LabelFor(model => model.Surname)
+            <br />
+            @Html.EditorFor(model => model.Surname)
+            <br /><br />
 
-    @Html.LabelFor(model => model.Gender, "Пол(1=М,2=Ж)")
-    <br />
-    @Html.DropDownListFor(Model => Model.Gender, ViewBag.GenderOptions as SelectList)
-    <br /><br />
+            @Html.LabelFor(model => model.Age)
+            <br />
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.Age)
+            <br /><br />
 
-    @Html.LabelFor(model => model.FatherId, "Отец")
-    <br />
-    @Html.DropDownListFor(Model => Model.MotherId, ViewBag.Fathers as SelectList)
-    <br /><br />
+            @Html.LabelFor(model => model.Gender)
+            <br />
+            @Html.DropDownListFor(Model => Model.Gender, ViewBag.GenderOptions as SelectList)
+            <br /><br />
 
-    @Html.LabelFor(model => model.MotherId, "Мать")
-    <br />
-    @Html.DropDownListFor(Model => Model.MotherId, ViewBag.Mothers as SelectList)
-    <br /><br />
+            @Html.LabelFor(model => model.FatherId)
+            <br />
+            @Html.DropDownListFor(Model => Model.FatherId, ViewBag.Fathers as SelectList)
+            <br /><br />
 
-    @Html.LabelFor(model => model.CoupleId, "Партнер")
-    <br />
-    @Html.DropDownListFor(Model => Model.CoupleId, ViewBag.Couples as SelectList)
-    <br /><br />
+            @Html.LabelFor(model => model.MotherId)
+            <br />
+            @Html.DropDownListFor(Model => Model.MotherId, ViewBag.Mothers as SelectList)
+            <br /><br />
 
-    @Html.LabelFor(model => model.StreetId, "Улица")
-    <br />
-    @Html.DropDownListFor(Model => Model.StreetId,ViewBag.Streets as SelectList)
-    <br /><br />
+            @Html.LabelFor(model => model.CoupleId)
+            <br />
+            @Html.DropDownListFor(Model => Model.CoupleId, ViewBag.Couples as SelectList)
+            <br /><br />
 
-    @Html.LabelFor(model => model.HouseId, "Номер дома(необязательно)")
-    <br />
-    @Html.EditorFor(model => model.HouseId)
-    <br /><br />
+            @Html.LabelFor(model => model.StreetId)
+            <br />
+            @Html.DropDownListFor(Model => Model.StreetId, ViewBag.Streets as SelectList)
+            <br /><br />
+
+            @Html.LabelFor(model => model.HouseId)
+            <br />
+            @Html.EditorFor(model => model.HouseId)
+            <br /><br />
 
 
 
 
-    <input type="submit" value="Создать" />
-}
+            <input type="submit" value="Создать" />
+        }
 

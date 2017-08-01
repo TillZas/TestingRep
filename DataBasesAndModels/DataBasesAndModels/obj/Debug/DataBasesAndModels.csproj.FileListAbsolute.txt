@@ -79,3 +79,6 @@ D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndM
 D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.Migrations.Initial.resources
 D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.csproj.GenerateResource.Cache
 D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.Migrations.TownMigration.resources
+D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.Migrations.MinorMigration.resources
+D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.Migrations.MinorMigration2.resources
+D:\Work\TestingRep\DataBasesAndModels\DataBasesAndModels\obj\Debug\DataBasesAndModels.Migrations.MinorMigration3.resources

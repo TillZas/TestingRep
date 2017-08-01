@@ -11,15 +11,19 @@
 {
     @Html.LabelFor(model => model.Name, "Название")
     <br />
-    @Html.EditorFor(model => model.Name)
+    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.Name, "")
     <br /><br />
 
     @Html.LabelFor(model => model.CreationAge, "Год создания")
     <br />
-    @Html.EditorFor(model => model.CreationAge)
+    @Html.EditorFor(model => model.CreationAge, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.CreationAge, "")
     <br /><br />
 
 
     <input type="submit" value="Создать" />
+    @Scripts.Render("~/Scripts/jquery-3.1.1.js")
+    @Scripts.Render("~/Scripts/jquery.validate.js")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.js")
 }
-
