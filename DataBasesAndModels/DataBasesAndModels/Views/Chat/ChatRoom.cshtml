@@ -2,11 +2,7 @@
 @using DataBasesAndModels.Models
 @model ChatModel
 
-<div id="RefreshArea">
-    @{
-        Html.RenderPartial("History", Model);
-    }
-</div>
+
 
 @Ajax.ActionLink("ActionLink", "Index", new { user = "", logOn = "", logOff = "", chatMessage = "" },
 new AjaxOptions { UpdateTargetId = "RefreshArea", OnSuccess = "ChatOnSuccess", OnFailure = "ChatOnFailure" },
@@ -14,9 +10,23 @@ new { @id = "ActionLink", @style = "visibility:hidden;" })
 
 <div id="inputForm">
     <table>
+        <style>
+            #messages {
+                font-style: italic;
+            }
+            #messages li:nth-child(odd) {
+                color : red;
+            }
+            #messages li:nth-child(even) {
+                color: blue;
+            }
+        </style>
+        <ul id="messages">
+        </ul>
         <tr>
             <td rowspan="2"><textarea id="txtMessage" rows="3"></textarea></td>
             <td><button id="btnMessage" value="Отправить">Отправить</button></td>
+            <td><button id="updtMessage" value="Отправить">Обновить</button></td>
         </tr>
         <tr>
             <td><button id="btnLogOff" value="Выйти">Выйти</button></td>

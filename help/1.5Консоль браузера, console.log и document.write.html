@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://metanit.com/web/javascript/1.5.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Консоль браузера, console.log и document.write</title>
+
+<meta name="description" content="Использование консоли браузера в JavaScript, метод console.log, применение метода document.write для вывода текста на страницу">
+<meta name="viewport" content="width=device-width">
+<link href="./1.5Консоль браузера, console.log и document.write_files/style16.css" rel="stylesheet" type="text/css">
+<script src="./1.5Консоль браузера, console.log и document.write_files/cb=gapi.loaded_1" async=""></script><script src="./1.5Консоль браузера, console.log и document.write_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="https://an.yandex.ru/system/context.js" async=""></script><script type="text/javascript" src="https://an.yandex.ru/system/context.js" async=""></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="./1.5Консоль браузера, console.log и document.write_files/embed.js.Без названия"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.eceee602870fc4ed49dc5f89e270689e.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.9fcff11af667507b1757062f0192b821.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.aafec1a2f3fa1e486216be04908b0e3a.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><img style="width:0;height:0;display:none;visibility:hidden;" src="./1.5Консоль браузера, console.log и document.write_files/saved_resource"></head>
+<body><panel class="drweb_select-panel" style="display: none;"><div class="drweb_tool-panel"><div class="drweb_tool-icon drweb_tool-icon_show" data-co="restore-btn" title="restore"></div><div class="drweb_tool-icon drweb_tool-icon_remove" data-co="remove-btn" title="remove"></div><div class="drweb_fit-btn" data-co="fit-btn" title=""></div></div><span data-co="label">Выберите элементы, которые не хотите видеть на этой странице</span><div class="drweb_btn" data-co="save">Сохранить</div><div class="drweb_btn" data-co="cancel">Отмена</div><div class="drweb_panel-plug" data-co="plug" style="display: none"></div></panel>
+<div id="container">
+
+<div id="header">
+<div id="logo">
+<a class="logoTitle" href="https://metanit.com/" title="На главную">METANIT.COM</a>
+<div class="logoDefinition">Сайт о программировании</div> 
+</div>
+
+<div class="socialbtns">
+<ul>
+<li><a title="Посмотреть меню" rel="nofollow" class="fa fa-lg fa-bars"></a></li>
+<li><a href="https://metanit.com/donations.php" title="Помощь сайту" rel="nofollow" class="fa fa-lg fa-usd" style="color:black;"></a></li>
+<li><a href="https://vk.com/metanit" title="Группа в ВКонтакте" rel="nofollow" class="fa fa-lg fa-vk"></a></li>
+<li><a href="https://twitter.com/Eugene225" title="Твиттер" rel="nofollow" class="fa fa-lg fa-twitter"></a></li>
+<li><a href="https://www.facebook.com/metanitcom" title="Страница в Facebook" rel="nofollow" class="fa fa-lg fa-facebook"></a></li>
+<li><a href="https://www.youtube.com/user/Eugene22584/" title="Канал сайта на Youtube" rel="nofollow" class="fa fa-lg fa-youtube"></a></li>
+</ul>
+</div>
+
+<div id="search" class="transp">
+<form action="https://www.google.ru/" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-3716042175333627:1096498938">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="text" name="q" placeholder="Пользовательского поиска" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;">
+    <input type="submit" name="sa" value="Найти">
+  </div>
+<input name="siteurl" type="hidden" value="metanit.com/web/javascript/1.5.php"><input name="ref" type="hidden" value="metanit.com/web/javascript/1.4.php"><input name="ss" type="hidden" value=""></form>
+<script type="text/javascript" src="./1.5Консоль браузера, console.log и document.write_files/brand"></script>
+</div>
+<div class="icon-vk"></div>
+<div id="magnifying-glass"></div>
+
+<div class="menuButton" id="menuButton">
+	<span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</div>
+
+<div id="menu" class="menu">
+<ul class="mainmenu">
+   <li><a href="https://metanit.com/sharp/">C#/.NET</a></li>
+   <li><a href="https://metanit.com/java/">Java</a></li>
+   <li><a href="https://metanit.com/web/">WEB</a></li>
+   <li><a href="https://metanit.com/python/tutorial/">Python</a></li>
+   <li><a href="https://metanit.com/cpp/c/">C/C++</a></li>
+   <li><a href="https://metanit.com/sql/">SQL</a></li>
+   <li><a href="https://metanit.com/nosql/mongodb/">MongoDB</a></li>
+   <li><a href="https://metanit.com/visualbasic/tutorial/">VB.NET</a></li>
+   <li><a href="https://metanit.com/swift/tutorial/">Swift</a></li>
+</ul>
+</div>
+</div>
+<div id="content_right"> 
+<div id="content_right_inner"> 
+<div id="content_center"> 
+<div id="menC" class="menC">
+<div class="articleText" id="articleText">
+<h2>Консоль браузера, console.log и document.write</h2><div class="date">Последнее обновление: 1.11.2015</div>
+
+<div class="socialBlock">
+<div class="share socialtop">
+<ul>
+<li><a title="Поделиться в Вконтакте" rel="nofollow" class="fa fa-lg fa-vk" onclick="window.open(&quot;http://vk.com/share.php?url=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в ВКОНТАКТЕ&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+<li><a title="Поделиться в Одноклассниках" rel="nofollow" class="fa fa-lg fa-odnoklassniki" onclick="window.open(&quot;https://connect.ok.ru/offer?url=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в Одноклассниках&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+<li><a title="Поделиться в Твиттере" rel="nofollow" class="fa fa-lg fa-twitter" onclick="window.open(&quot;http://twitter.com/share?url=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в Твиттере&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+<li><a title="Поделиться в Гугл+" rel="nofollow" class="fa fa-lg fa-google-plus" onclick="window.open(&quot;https://plus.google.com/share?url=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в Google+&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+<li><a title="Поделиться в Фейсбуке" rel="nofollow" class="fa fa-lg fa-facebook" onclick="window.open(&quot;http://www.facebook.com/sharer.php?u=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в Facebook&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+</ul>
+</div>
+<div class="like socialtop">
+<ul>
+</ul>
+<div class="gplus">
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 38px; height: 24px;" id="___plusone_0"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1502099990325" name="I0_1502099990325" src="./1.5Консоль браузера, console.log и document.write_files/fastbutton.html" data-gapiattached="true" title="G+"></iframe></div>
+</div>
+</div>
+</div>
+
+<div style="margin-top:23px;margin-left:5px;">
+
+<style>
+.footer-adaptive { width: 320px; height: 100px; }
+@media(min-width: 480px) { .footer-adaptive { width: 468px; height: 60px; } }
+@media(min-width: 760px) { .footer-adaptive { width: 728px; height: 90px;  } }
+@media(min-width: 860px) { .footer-adaptive { width: 468px; height: 60px;  } }
+@media(min-width: 1122px) { .footer-adaptive{ width: 728px; height: 90px;} }
+@media(min-width: 1400px) { .footer-adaptive { width: 970px; height: 90px;} }
+</style>
+<!-- footer_adaptive -->
+<ins class="adsbygoogle footer-adaptive" style="display:inline-block" data-ad-client="ca-pub-3716042175333627" data-ad-slot="9659512088"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<p>Незаменимым инструментом при работе с JavaScript является консоль браузера, которая позволяет производить отладку программы. Во многих современных 
+браузерах есть подобная консоль. Например, чтобы открыть консоль в Google Chrome, нам надо перейти в меню <span class="bb">Дополнительные инструменты -&gt; 
+Консоль JavaScript</span>:</p>
+<img src="./1.5Консоль браузера, console.log и document.write_files/1.8.png" alt="Отладка JavaScript в Google Chrome">
+<p>После этого внизу браузера откроется консоль:</p>
+<img src="./1.5Консоль браузера, console.log и document.write_files/1.9.png" alt="Консоль JavaScript в Google Chrome">
+<p>Мы можем напрямую вводить в консоль браузера выражения JavaScript, и они будут выполняться. Например, введем в консоли следующий текст:</p>
+<pre class="brush:js;">alert("Привет мир");
+</pre>
+<img src="./1.5Консоль браузера, console.log и document.write_files/1.10.png">
+<p>Браузер выполнит данную команду и отобразит нам окно с сообщением.</p>
+<p>Для вывода различного рода информации в консоли браузера используется специальная функция <b>console.log()</b>. Например, 
+определим следующую веб-страницу:</p>
+<pre class="brush:xml;">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset="utf-8" /&gt;
+&lt;title&gt;JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h2&gt;Первая программа на JavaScript&lt;/h2&gt;
+	&lt;script&gt;
+	var a = 5 + 8;
+	console.log("Результат операции");
+	console.log(a);
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>В коде javascript с помощью ключевого слова <span class="bb">var</span> объявляется переменная <code>a</code>, которой присваивается сумма двух чисел 5 и 8: <code>var a = 5 + 8</code>. 
+С помощью метода <code>console.log()</code> выводится значение переменной a. И после запуска веб-страницы в браузере мы увидим в консоли 
+результат выполнения кода:</p>
+<img src="./1.5Консоль браузера, console.log и document.write_files/1.11.png" alt="Функция console.log() в JavaScript">
+<p>В дальнейшем мы часто будем обращаться к консоли и использовать функцию console.log.</p>
+<h3>Метод document.write</h3>
+<p>Также на начальном этапе нам может быть полезен метод <span class="bb">document.write()</span>, который пишет информацию на веб-страницу.</p>
+<p>Например, возьмем предыдущий пример и изменим в нем метод console.log на document.write:</p>
+<pre class="brush:xml;">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset="utf-8" /&gt;
+&lt;title&gt;JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h2&gt;Первая программа на JavaScript&lt;/h2&gt;
+	&lt;script&gt;
+	var a = 5 + 8;
+	document.write("Результат операции ");
+	document.write(a);
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Программа выводит результат операции напрямую на веб-страницу:</p>
+<img src="./1.5Консоль браузера, console.log и document.write_files/document.write.png" alt="Метод document.write в JavaScript">
+
+
+<div style="margin-top:25px;clear:both;">
+
+
+<style>
+.metanit-rect { width: 300px; height: 250px; }
+@media(min-width: 500px) { .metanit-rect { width: 336px; height: 280px; } }
+@media(min-width: 760px) { .metanit-rect { width: 728px; height: 90px;  } }
+@media(min-width: 860px) { .metanit-rect { width: 336px; height: 280px;  } }
+@media(min-width: 1122px) { .metanit-rect{ width: 728px; height: 90px;} }
+@media(min-width: 1400px) { .metanit-rect{ width: 970px; height: 90px;} }
+</style>
+<!-- metanit_rect -->
+<ins class="adsbygoogle metanit-rect" style="display:inline-block" data-ad-client="ca-pub-3716042175333627" data-ad-slot="3119477283"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+
+<div class="nav"><p><a href="https://metanit.com/web/javascript/1.4.php">Назад</a><a href="https://metanit.com/web/javascript/">Содержание</a><a href="https://metanit.com/web/javascript/2.1.php">Вперед</a></p></div></div>
+<div class="socialBlock">
+<div class="share socialbottom">
+<ul>
+<li><a title="Поделиться в Вконтакте" rel="nofollow" class="fa fa-lg fa-vk" onclick="window.open(&quot;http://vk.com/share.php?url=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в ВКОНТАКТЕ&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+<li><a title="Поделиться в Одноклассниках" rel="nofollow" class="fa fa-lg fa-odnoklassniki" onclick="window.open(&quot;https://connect.ok.ru/offer?url=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в Одноклассниках&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+<li><a title="Поделиться в Твиттере" rel="nofollow" class="fa fa-lg fa-twitter" onclick="window.open(&quot;http://twitter.com/share?url=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в Твиттере&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+<li><a title="Поделиться в Гугл+" rel="nofollow" class="fa fa-lg fa-google-plus" onclick="window.open(&quot;https://plus.google.com/share?url=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в Google+&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+<li><a title="Поделиться в Фейсбуке" rel="nofollow" class="fa fa-lg fa-facebook" onclick="window.open(&quot;http://www.facebook.com/sharer.php?u=https://metanit.com/web/javascript/1.5.php&quot;,&quot;Поделиться в Facebook&quot;,&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;)"></a></li>
+</ul>
+</div>
+<div class="like socialbottom">
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 38px; height: 24px;" id="___plusone_1"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I1_1502099990331" name="I1_1502099990331" src="./1.5Консоль браузера, console.log и document.write_files/fastbutton(1).html" data-gapiattached="true" title="G+"></iframe></div>
+</div>
+</div>
+
+<style>
+.commentABl { margin: 25px 0px 15px 10px;}
+@media(min-width: 860px) { .commentABl { margin: 35px 10px 15px 10px;  } }
+</style>
+<div class="commentABl" style="clear:both;">
+<div id="yandex_rtb_R-A-201190-3" style="display:inline-block;width:336px;vertical-align:top;"></div>
+<div id="yandex_rtb_R-A-201190-2" style="display:inline-block;width:336px;vertical-align:top;"></div>
+</div>
+
+
+<div id="disqus_thread" style="margin-left:8px;margin-right:8px;clear:both;"><iframe id="dsq-app9208" name="dsq-app9208" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./1.5Консоль браузера, console.log и document.write_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important;"></iframe></div>
+    <script type="text/javascript">
+        
+        var disqus_shortname = 'metanitcom';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</div>
+</div> 
+<div id="menR" class="menR">
+
+<style>
+.meta-vert { width: 300px; height: 250px; }
+@media(min-width: 500px) { .meta-vert { width: 336px; height: 280px; } }
+@media(min-width: 860px) { .meta-vert { width: 160px; height: 600px; } }
+</style>
+<!-- meta_vert -->
+<ins class="adsbygoogle meta-vert" style="display:inline-block" data-ad-client="ca-pub-3716042175333627" data-ad-slot="4596210485"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+</div>
+</div>
+</div> 
+<div class="menT" id="menT"><ul id="browser" class="filetree treeview"> 
+				<li class="closed collapsable"><div class="hitarea closed-hitarea collapsable-hitarea"></div><span class="folder">Глава 1. Введение в JavaScript</span>
+					<ul style="display: block;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/1.1.php">Что такое JavaScript</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/1.2.php">Первая программа на JavaScript</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/1.3.php">Выполнение кода javascript</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/1.4.php">Подключение внешнего файла JavaScript</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/1.5.php">Консоль браузера, console.log и document.write</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 2. Основы javascript</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/2.1.php">Переменные</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/2.2.php">Типы данных</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/2.3.php">Операции с переменными</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/2.4.php">Преобразование данных</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/2.5.php">Массивы</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/2.6.php">Условные конструкции</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/2.7.php">Циклы</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 3. Функциональное программирование</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/3.1.php">Функции</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/3.2.php">Область видимости переменных</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/3.3.php">Замыкания и функции IIFE</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/3.4.php">Рекурсивные функции</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/3.5.php">Переопределение функций</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/3.6.php">Hoisting</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 4. Объектно-ориентированное программирование</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.1.php">Объекты</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.2.php">Вложенные объекты и массивы в объектах</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.3.php">Проверка наличия и перебор методов и свойств</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.4.php">Объекты в функциях</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.5.php">Конструкторы объектов</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.6.php">Расширение объектов. Prototype</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.7.php">Инкапсуляция</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.8.php">Функция как объект. Методы call и apply</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/4.9.php">Наследование</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/4.10.php">Ключевое слово this</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 5. Встроенные объекты</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/5.1.php">Объект Date. Работа с датами</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/5.2.php">Объект Math. Математические операции</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/5.3.php">Объект Array. Работа с массивами</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/5.4.php">Объект Number</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 6. Строки</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/6.1.php">Объект String</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/6.2.php">Объект RegExp. Регулярные выражения</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/6.3.php">Регулярные выражения в методах String</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/6.4.php">Синтаксис регулярных выражений</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 7. Работа с браузером и BOM</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/7.1.php">Browser Object Model и объект window</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/7.2.php">Управление окнами</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/7.3.php">История браузера. Объект history</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/7.4.php">Объект location</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/7.5.php">Объект navigator</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/7.6.php">Таймеры</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 8. Работа с DOM</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/8.1.php">Введение в DOM</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/8.2.php">Объект document. Поиск элементов</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/8.3.php">Свойства объекта document</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/8.4.php">Объект Node. Навигация по DOM</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/8.5.php">Создание, добавление и удаление элементов веб-станицы</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/8.6.php">Объект Element. Управление элементами</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/8.7.php">Изменение стиля элементов</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 9. События</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/9.1.php">Введение в обработку событий</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/9.2.php">Обработчики событий</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/9.3.php">Объект Event</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/9.4.php">Распространение событий</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/9.5.php">События мыши</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/9.6.php">События клавиатуры</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 10. Работа с формами</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/10.1.php">Формы и их элементы</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/10.2.php">Кнопки</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/10.3.php">Текстовые поля</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/10.4.php">Флажки и переключатели</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/10.5.php">Список select</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 11. JSON</span>
+					<ul style="display: none;">
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/11.1.php">Введение в JSON</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable"><div class="hitarea closed-hitarea expandable-hitarea"></div><span class="folder">Глава 12. Хранение данных</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/12.1.php">Куки</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/12.2.php">Web Storage</a></span></li>
+					</ul>
+				</li>
+				<li class="closed expandable lastExpandable"><div class="hitarea closed-hitarea expandable-hitarea lastExpandable-hitarea"></div><span class="folder">Глава 13. Ajax</span>
+					<ul style="display: none;">
+						<li><span class="file"><a href="https://metanit.com/web/javascript/13.1.php">Объект XMLHttpRequest</a></span></li>
+						<li><span class="file"><a href="https://metanit.com/web/javascript/13.2.php">Отправка данных</a></span></li>
+						<li class="last"><span class="file"><a href="https://metanit.com/web/javascript/13.3.php">Promise в Ajax-запросах</a></span></li>
+					</ul>
+				</li>
+	</ul></div>
+<div id="footer">
+
+<div class="bootomLinks">
+<a href="https://vk.com/metanit" title="Присоединиться к группе вконтакте" rel="nofollow">
+Вконтакте</a>|
+<a href="https://twitter.com/Eugene225" title="Подписаться на твит-ленту" rel="nofollow">
+Twitter</a>|
+<a href="https://plus.google.com/+Metanit22/" title="Добавить в круги на Google+" rel="nofollow">
+Google+</a>|
+<a href="https://www.youtube.com/user/Eugene22584/" title="Подписаться на канал на youtube" rel="nofollow">
+Канал сайта на youtube</a>|
+<a href="https://metanit.com/donations.php" rel="nofollow">Помощь сайту</a>
+</div>
+<p>Контакты для связи: metanit22@mail.ru</p>
+<p>Copyright © metanit.com, 2012-2017. Все права защищены.</p>
+</div>
+</div>
+<script type="text/javascript" src="./1.5Консоль браузера, console.log и document.write_files/jquery.min.js.Без названия"></script>
+<script type="text/javascript" src="./1.5Консоль браузера, console.log и document.write_files/jquery.treeview.min.js.Без названия"></script>
+<script type="text/javascript" src="./1.5Консоль браузера, console.log и document.write_files/syntax5.min.js.Без названия"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<script>
+$(function() { 
+	$("#menuButton").on('click', function(){
+          $(this).toggleClass('menu-opened');
+          var mainmenu = $('.mainmenu');
+          if (mainmenu.hasClass('open')) { 
+            mainmenu.removeClass('open');
+          }
+          else {
+            mainmenu.addClass('open');
+          }
+        });
+	$('.submenu-button').on('click', function() {
+            $(this).toggleClass('submenu-opened');
+            if ($(this).siblings('ul').hasClass('open')) {
+              $(this).siblings('ul').removeClass('open');
+			  $(this).children('span').removeClass('open');
+			  $(this).children('span').addClass('close');
+            }
+            else {
+              $(this).siblings('ul').addClass('open');
+			  $(this).children('span').removeClass('close');
+			  $(this).children('span').addClass('open');
+            }
+          });
+		
+	$('#magnifying-glass').on('click', function() {
+            if ($('#search').hasClass('transp')) {
+              $('#search').removeClass('transp').show();
+            }
+            else {
+              $('#search').addClass('transp').hide();
+            }
+          });
+	$('#browser').treeview();$('#navigation').treeview({persist: 'location',collapsed: true, unique: true});
+	
+	$("li:contains('Глава 1.')").removeClass('expandable').addClass('collapsable').children('ul').css({"display":"block"});
+	$("li:contains('Глава 1.')").children('div').removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+	
+	$("li:contains('Глава .')").removeClass('lastExpandable').addClass('lastCollapsable').children('ul').css({"display":"block"});
+	$("li:contains('Глава .')").children('div').removeClass('lastExpandable-hitarea').addClass('lastCollapsable-hitarea');
+	
+	$(".fa-bars").on('click', function() {
+		
+		$(".menT").toggleClass("menTOpened");
+		$("#content_right_inner").toggleClass("contentRightInnerOpened");
+	});
+	
+	$(".share .fa-vk").attr('onclick','window.open("http://vk.com/share.php?url=' + window.location.href+'","Поделиться в ВКОНТАКТЕ","width=420,height=230,resizable=yes,scrollbars=yes,status=yes")');
+	$(".share .fa-odnoklassniki").attr('onclick','window.open("https://connect.ok.ru/offer?url=' + window.location.href+'","Поделиться в Одноклассниках","width=420,height=230,resizable=yes,scrollbars=yes,status=yes")');
+	$(".share .fa-twitter").attr('onclick','window.open("http://twitter.com/share?url=' + window.location.href+'","Поделиться в Твиттере","width=420,height=230,resizable=yes,scrollbars=yes,status=yes")');
+	$(".share .fa-google-plus").attr('onclick','window.open("https://plus.google.com/share?url=' + window.location.href +'","Поделиться в Google+","width=420,height=230,resizable=yes,scrollbars=yes,status=yes")');
+	$(".share .fa-facebook").attr('onclick','window.open("http://www.facebook.com/sharer.php?u=' + window.location.href +'","Поделиться в Facebook","width=420,height=230,resizable=yes,scrollbars=yes,status=yes")');
+	$(".like .google-plus-one").attr('onclick','window.open("https://apis.google.com/_/+1/fastbutton?usegapi=1&url=' + window.location.href+'","Лайк в Google+","width=420,height=230,resizable=yes,scrollbars=yes,status=yes")');
+});
+</script>
+<script>
+window.onload= function(){
+	setMenC();
+};
+window.onresize= function(){
+	setMenC();
+};
+
+function setMenC(){
+	if(window.innerWidth >859){
+			
+		var h = document.getElementById("articleText").clientHeight;
+		document.getElementById("menT").style.maxHeight=h + "px";
+	}
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35780297-1', 'metanit.com');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+</script>
+<script src="./1.5Консоль браузера, console.log и document.write_files/platform.js.Без названия" async="" defer="" gapi_processed="true"></script>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-201190-3",
+                renderTo: "yandex_rtb_R-A-201190-3",
+                horizontalAlign: false,
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-201190-2",
+                renderTo: "yandex_rtb_R-A-201190-2",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+
+<iframe name="oauth2relay286295782" id="oauth2relay286295782" src="./1.5Консоль браузера, console.log и document.write_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><script src="./1.5Консоль браузера, console.log и document.write_files/24e961841a2970a134.js.Без названия"></script><iframe style="display: none;" src="./1.5Консоль браузера, console.log и document.write_files/saved_resource(4).html"></iframe><img style="width:0;height:0;display:none;visibility:hidden;" src="./1.5Консоль браузера, console.log и document.write_files/saved_resource(1)"><img style="width:0;height:0;display:none;visibility:hidden;" src="./1.5Консоль браузера, console.log и document.write_files/saved_resource(2)"><script type="text/javascript" src="./1.5Консоль браузера, console.log и document.write_files/get"></script><img style="width:0;height:0;display:none;visibility:hidden;" src="./1.5Консоль браузера, console.log и document.write_files/saved_resource(3)"></body></html>

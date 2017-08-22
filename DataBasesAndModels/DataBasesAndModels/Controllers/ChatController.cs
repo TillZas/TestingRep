@@ -82,5 +82,11 @@ namespace DataBasesAndModels.Controllers
         }
 
 
+        public JsonResult Messages()
+        {
+            var messages = chatModel.GetMessages();
+            return Json(messages, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
