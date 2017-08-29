@@ -31,6 +31,8 @@ https://metanit.com/web/html5/
 
 8) Замыкания JS
 
+Telerik.UI.for.AspNet.Core.Trial
+
 Написать отдельный проект:
 	1) ASP.NET5core
 	2) Kendo UI (MVvM)

@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -184,6 +185,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LibraryDB.mdf" />
+    <Content Include="App_Data\LibraryDB_log.ldf">
+      <DependentUpon>LibraryDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Town.mdf" />
     <Content Include="App_Data\Town_log.ldf">
       <DependentUpon>Town.mdf</DependentUpon>
