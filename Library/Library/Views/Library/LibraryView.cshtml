@@ -1,0 +1,28 @@
+﻿@model BookListViewModel
+@{
+    ViewData["Title"] = "Library";
+    Layout = "~/Views/Shared/_LayoutLib.cshtml";
+}
+
+<h2>Library</h2>
+
+<input id="searchLine" /><input id="authorSearch" /><br />
+
+<button id="button5" type="button">Добавить</button>
+<button id="button6" type="button">Добавить(Случ. Название)</button>
+<button id="button7" type="button">Редактировать Авторов</button>
+
+<div id="libraryBookStack">
+</div>
+
+<div id="authorEditor">
+    <input id="authorSearchEdit" /><br />
+    <div id="anEditor">
+        <input id ="authorName" name="authorName" type="text" required /> <br />
+        <button id="button8" type="button">Принять изменения</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/tillzas/libraryLoader.js"></script>
+}

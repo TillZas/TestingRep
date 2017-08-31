@@ -22,11 +22,17 @@ namespace Library
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            
+            // Add Kendo UI services to the services container
+            services.AddKendo();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // Configure Kendo UI
+            app.UseKendo(env);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -43,7 +49,7 @@ namespace Library
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Library}/{action=Index}/{id?}");
+                    template: "{controller=Library}/{action=LibraryView}");
             });
         }
     }

@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Library.Models;
-using static Library.Models.LibraryModels;
+using static Library.Models.Book;
+using static Library.Models.Author;
 using Library.utils;
 
 namespace Library.Controllers
@@ -59,6 +60,79 @@ namespace Library.Controllers
             if (bk != null)
                 return "Book " + id + ": " + bk.Title + " " + bk.AuthorRefId + " " + bk.Author;
             else return "No such book";
+        }
+
+        public JsonResult Books(int? authorId,string title)
+        {
+            Console.WriteLine("Books " + authorId + " " + title);
+            List<Book> modelVal = null;
+            if(authorId == null && title == null)
+            {
+                modelVal =  libRes.GetBooks();
+            }else if(authorId == null && title != null)
+            {
+                modelVal = libRes.FindBooksByTitle(title);
+
+            }
+            else if (authorId != null && title == null)
+            {
+                modelVal = libRes.GetAuthorPublications((int)authorId);
+            }
+            else
+            {
+                modelVal = libRes.FindBooksByTitleAndAuthor((int)authorId,title);
+            }
+            return Json(modelVal);
+        }
+
+        public JsonResult AuthorsEnum() => Json(libRes.getAutorsAsEnum(true));
+        public JsonResult BookTitles() => Json(libRes.GetAllBookNames());
+
+        public void RemoveBook(int? id)
+        {
+            if (id == null) return;
+            else libRes.DeleteBook((int)id);
+        }
+
+        public void EditBook(int? id,string title,string annotation,int? authorRefId)
+        {
+            if (id == null) return;
+            else libRes.Update(new Book() { BookId = (int)id, Title = title, Annotation = annotation, AuthorRefId = authorRefId });
+        }
+
+        public IActionResult LibraryView()
+        {
+            List<Book> modelVal = null;
+            modelVal = libRes.GetBooks();
+            return View(new BookListViewModel(modelVal));
+        }
+
+        public IActionResult AutorsView()
+        {
+            return View();
+        }
+
+
+        public void UpdateAuthor(int? id, string name)
+        {
+            Author ath = new Author();
+            ath.Name = name == null ? rgen.GetRandomName() : name;
+            if (id == null) libRes.Create(ath);
+            else
+            {
+                ath.AuthorId = (int)id;
+                libRes.Update(ath);
+            }
+        }
+
+        public JsonResult GetRandomName()
+        {
+            return Json(rgen.GetRandomName());
+        }
+
+        public JsonResult GetRandomTitle()
+        {
+            return Json(rgen.GetRandomTitle());
         }
     }
 }

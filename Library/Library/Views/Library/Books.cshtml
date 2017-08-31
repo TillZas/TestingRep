@@ -1,0 +1,18 @@
+﻿@model BookListViewModel
+
+<div id="libraryBookStack">
+</div>
+
+@(Html.Kendo().Grid((IEnumerable<Library.Models.Book>)
+        Model.list).Name("bookList").Columns(
+            columns =>
+            {
+
+                columns.Bound(book => book.Title);
+                columns.Bound(book => book.Annotation);
+                columns.Bound(book => book.Author.Name);
+
+            }
+        ).Pageable()
+        .Sortable()
+)
